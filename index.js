@@ -25,5 +25,3 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// query parameters are used to filter the data based on certain criteria. In this case, we can use query parameters to filter the packages based on the destination. For example, if we want to get all the packages that have a destination of "Maldives", we can use the following URL: http://localhost:3000/packages?des=Maldives
-// http://localhost:3000/packages?des=maldieves
