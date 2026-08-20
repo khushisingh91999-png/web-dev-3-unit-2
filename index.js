@@ -8,9 +8,9 @@ app.use('/api', tourRoutes);
 
 // const packages = require('./data/tour');
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World');
-// });
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
 
 
 // app.get('/packages', (req, res) => {

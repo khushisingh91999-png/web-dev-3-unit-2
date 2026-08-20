@@ -7,13 +7,12 @@ const getAllTours = (req, res) => {
 };
 
 // Get tour by ID
-const getTourById = (req, res) => {
-    const tourId = parseInt(req.params.id);
-    const tour = tourModel.getById(tourId);
-    res.json(tour);
-};
+// const getTourById = (req, res) => {
+//     const tourId = parseInt(req.params.id);
+//     const tour = tourModel.getById(tourId);
+//     res.json(tour);
+// };
 
 module.exports = {
-    getAllTours,
-    getTourById
+    getAllTours
 };
