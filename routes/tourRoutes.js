@@ -6,6 +6,17 @@ const tourController = require("../controller/tourController");
 router.get("/tour", tourController.getAllTours);
 
 // Route to get tour by ID
-//router.get("/tour/:id", tourController.getTourById);
+router.get("/tour/:id", tourController.getTourById);
+
+// Route to get tours by query
+router.get("/tour/search", tourController.getToursByQuery);
+
+router.post("/tour", (req, res) => {
+    const newTour = req.body;
+    const tours = tourController.getAllTours();
+    tours.push(newTour);
+    tourController.saveTours(tours);
+    res.status(201).json(newTour);
+});
 
 module.exports = router;
