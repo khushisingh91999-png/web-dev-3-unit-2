@@ -23,15 +23,26 @@ const getToursByQuery = (req, res) => {
     res.json(tours);
 };
 
-const saveTours = (tours) => {
+const saveTours = (req, res) => {
+    const tours = req.body;
     tourModel.saveTours(tours);
+    res.status(201).json({ message: 'Tour saved successfully' });
+};
+
+const updateTour = (req, res) => {
+    const tourId = parseInt(req.params.id);
+    const updatedTour = req.body;
+    tourModel.updateTour(tourId, updatedTour);
+    res.status(200).json({ message: 'Tour updated successfully' });
 }
 
 module.exports = {
     getAllTours,
     getTourById,
     getToursByQuery,
-    saveTours
+    saveTours,
+    updateTour
+
 };
 
 

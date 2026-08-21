@@ -11,12 +11,8 @@ router.get("/tour/:id", tourController.getTourById);
 // Route to get tours by query
 router.get("/tour/search", tourController.getToursByQuery);
 
-router.post("/tour", (req, res) => {
-    const newTour = req.body;
-    const tours = tourController.getAllTours(req, res);
-    tours.push(newTour);
-    tourController.saveTours(tours);
-    res.status(201).json(newTour);
-});
+router.post("/tour", tourController.saveTours);
+
+router.put("/tour/:id", tourController.updateTour);
 
 module.exports = router;
