@@ -13,7 +13,7 @@ router.get("/tour/search", tourController.getToursByQuery);
 
 router.post("/tour", (req, res) => {
     const newTour = req.body;
-    const tours = tourController.getAllTours();
+    const tours = tourController.getAllTours(req, res);
     tours.push(newTour);
     tourController.saveTours(tours);
     res.status(201).json(newTour);
