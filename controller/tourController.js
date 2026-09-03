@@ -42,7 +42,7 @@ module.exports = {
     getToursByQuery,
     saveTours,
     updateTour
-
+ 
 };
 
 
