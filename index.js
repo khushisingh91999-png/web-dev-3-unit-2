@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 
 //const tourRoutes = require('./routes/tourRoutes');
 
 app.use(express.json());
+app.use(morgan("dev"));
 //app.use('/api', tourRoutes);
 
 // const packages = require('./data/tour');
@@ -41,7 +43,6 @@ const logger = (req, res, next) => {
 }
 
 app.use(logger);
-
 
 const checkAge = (req,res,next)=>{
   const age = 6;
